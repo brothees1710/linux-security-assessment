@@ -1,16 +1,5 @@
 #!/usr/bin/env bash
-#
-# ============================================================================
-#  BOILERPLATE : Linux Security Assessment Tool  (IS2083 Lab 1)
-# ============================================================================
-#  This is a boilerplate you can use to create your own script. Copy it,
-#  rename it, and fill in each TODO section by section, following the handout.
-#  Do not skip ahead: build and test one section at a time.
-#
-#  Target: a Debian based Linux VM (Ubuntu or Kali). Run from a terminal.
-#  On a Red Hat based system, replace the Debian commands with equivalents
-#  (apt -> dnf, ufw -> firewalld, /var/log/auth.log -> /var/log/secure).
-# ============================================================================
+o
 
 set -u   # catch unset variables. We avoid 'set -e' so one failed check
          # does not stop the whole assessment.
@@ -26,8 +15,7 @@ sudo -v
 
 
 # --- Section 4: Report creation (file manipulation) --------------------------
-# TODO: make WORKDIR under $HOME, build a timestamped REPORT path, touch it,
-#       and write log() and section() helpers that echo AND append with tee -a.
+
 WORKDIR="$HOME/${TOOL_NAME}_reports"
 mkdir -p "$WORKDIR"
 REPORT="$WORKDIR/report_$(date +%Y%m%d_%H%M%S).txt"
@@ -39,8 +27,7 @@ log "Generated : $(date)"
 log "Host : $(hostname)"
 log "Run by : $(whoami)"
 # --- Section 5: System administration ----------------------------------------
-# TODO: report OS, uptime, disk usage, UID 0 accounts, sudo group members,
-#       and the count of upgradable packages. Save the count in UPGRADES.
+
 section "System Administration"
 
 log "Operating System:"
